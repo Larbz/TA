@@ -51,8 +51,8 @@ class HostAgent(Agent):
 
         Global.x_center = 0
 
-        hilo=threading.Thread(target=self.createFishAgent)
-        hilo.start()
+        # hilo=threading.Thread(target=self.createFishAgent)
+        # hilo.start()
         for _ in range(self.num_fishes):
             # self.fish_list.append(FishAgent(AID(name=host_agent_name)))
             self.createFishAgent()
@@ -61,7 +61,7 @@ class HostAgent(Agent):
         yourtimed = YourTimedBehaviour(self, 2)
         self.behaviours.append(mytimed)
         self.behaviours.append(yourtimed)
-        hilo.join()
+        # hilo.join()
     def createFishAgent(self):
         self.fish_list.append(FishAgent(AID(name=host_agent_name)))
 
