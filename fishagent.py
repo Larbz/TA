@@ -5,27 +5,27 @@ from pade.core.agent import Agent
 from PySide6.QtGui import QColor
 from pade.behaviours.protocols import TimedBehaviour
 import time 
-class MyTimedBehaviour(TimedBehaviour):
-    def __init__(self, agent, time):
-        super(MyTimedBehaviour, self).__init__(agent, time)
-        # self.agent = agent
-        # print("init")/
-        # self.on_time()
+# class MyTimedBehaviour(TimedBehaviour):
+#     def __init__(self, agent, time):
+#         super(MyTimedBehaviour, self).__init__(agent, time)
+#         # self.agent = agent
+#         # print("init")/
+#         # self.on_time()
 
-    def on_time(self):
-        super(MyTimedBehaviour, self).on_time()
-        # display_message(self.agent.aid.localname, 'Updating the fishies!')
-        # for fish in self.agent.fish_list:
-        #     fish.updateStatus()
-        #     fish.swim()
-        print("asd")
-        # self.agent.updateStatus()
-        # self.agent.swim()
-        # time.sleep(0.2)
-        # for fish in self.agent.fish_list:
-        #     fish.on_time()
+#     def on_time(self):
+#         super(MyTimedBehaviour, self).on_time()
+#         # display_message(self.agent.aid.localname, 'Updating the fishies!')
+#         # for fish in self.agent.fish_list:
+#         #     fish.updateStatus()
+#         #     fish.swim()
+#         print("asd")
+#         # self.agent.updateStatus()
+#         # self.agent.swim()
+#         # time.sleep(0.2)
+#         # for fish in self.agent.fish_list:
+#         #     fish.on_time()
 
-        # gui.update()
+#         # gui.update()
 
 
 class FishAgent(Agent):
@@ -38,9 +38,9 @@ class FishAgent(Agent):
         self.speed = 10 * 25 / self.size
         self.status = -1
         self.spriteId = random.randint(0,5)
-        mytimed = MyTimedBehaviour(self, .2)
+        # mytimed = MyTimedBehaviour(self, .2)
         # yourtimed = YourTimedBehaviour(self, 2)
-        self.behaviours.append(mytimed)
+        # self.behaviours.append(mytimed)
         # self.behaviours.append(yourtimed)
     #     self.loop()
 

@@ -6,7 +6,7 @@ from pade.behaviours.protocols import TimedBehaviour
 from pade.misc.utility import start_loop, display_message
 from fishagent import FishAgent
 from pade.core.agent import Agent
-
+import time
 from globals import Global
 from gui import Gui
 
@@ -14,11 +14,13 @@ from gui import Gui
 class MyTimedBehaviour(TimedBehaviour):
     def __init__(self, agent, time):
         super(MyTimedBehaviour, self).__init__(agent, time)
-        # self.agent = agent
+        self.agent = agent
         # start_loop(self.agent.fish_list)
 
     def on_time(self):
         super(MyTimedBehaviour, self).on_time()
+        self.agent.fish.updateStatus()
+        self.agent.fish.swim()
         # display_message(self.agent.aid.localname, 'Updating the fishies!')
         # for fish in self.agent.fish_list:
         #     fish.updateStatus()
@@ -33,6 +35,7 @@ class MyTimedBehaviour(TimedBehaviour):
 class YourTimedBehaviour(TimedBehaviour):
     def __init__(self, agent, time):
         super(YourTimedBehaviour, self).__init__(agent, time)
+        self.agent=agent
 
 
     def on_time(self):
